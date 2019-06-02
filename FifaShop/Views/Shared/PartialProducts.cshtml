@@ -1,0 +1,20 @@
+﻿@model FifaShop.MainClasses.Product
+
+
+    <div class="col-lg-3">
+        <div class="Pro-Div thumbnail">
+           <h4>@Model.pro_name</h4>
+            <hr />
+            @Model.pro_cat
+            <p>@Model.pro_desc</p>
+           <h3 class="text-justify" style="color:#ff3b65">$ @Model.pro_price</h3> 
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+               <div>
+                   @Html.HiddenFor(P => P.pro_id)
+                   @Html.Hidden("RedirectUrl", Request.Url.PathAndQuery)
+                   <input type="submit" value="Add To Cart"/>
+               </div> 
+            }
+        </div>
+    </div>

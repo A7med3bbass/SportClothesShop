@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FifadatabaseModelStoreContainer" CdmEntityContainer="FifadatabaseEntities">
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="FifadatabaseModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Pro_id" ColumnName="Pro_id" />
+          <ScalarProperty Name="Pro_Name" ColumnName="Pro_Name" />
+          <ScalarProperty Name="Pro_Price" ColumnName="Pro_Price" />
+          <ScalarProperty Name="Pro_Desc" ColumnName="Pro_Desc" />
+          <ScalarProperty Name="Pro_Cat" ColumnName="Pro_Cat" />
+          <ScalarProperty Name="Pro_Marca" ColumnName="Pro_Marca" />
+          <ScalarProperty Name="Pro_NatMade" ColumnName="Pro_NatMade" />
+          <ScalarProperty Name="Pro_Evelu" ColumnName="Pro_Evelu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

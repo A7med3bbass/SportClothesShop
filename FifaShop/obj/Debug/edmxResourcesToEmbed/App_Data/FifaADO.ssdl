@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FifadatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Pro_id" />
+    </Key>
+    <Property Name="Pro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pro_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pro_Price" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Pro_Desc" Type="nvarchar(max)" />
+    <Property Name="Pro_Cat" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_Marca" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_NatMade" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_Evelu" Type="int" />
+  </EntityType>
+  <EntityContainer Name="FifadatabaseModelStoreContainer">
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

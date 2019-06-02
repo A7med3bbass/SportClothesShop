@@ -1,0 +1,39 @@
+﻿@model FifaShop.MainClasses.ShipDetails
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_MainLayOut.cshtml";
+}
+
+@Html.ValidationSummary()
+<h2 class="text-center">CheckOut Now</h2>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name);
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.AddressA)
+            @Html.TextBoxFor(x => x.AddressA, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.AddressB)
+            @Html.TextBoxFor(x => x.AddressB, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.Country)
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.City)
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+
+            @Html.LabelFor(x => x.State)
+            @Html.TextBoxFor(x => x.State, new { @class = "form-control" })
+
+            <label>
+                I Want Send This Is Product To Be Gift @Html.EditorFor(P => P.Gift, new { @class = "checkbox" })
+            </label>
+        </div>
+        <input type="submit" value="Complated" class="btn btn-primary"/>
+    }
+</div>

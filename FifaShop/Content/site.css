@@ -1,0 +1,31 @@
+﻿.Pro-Div {
+    /*border:1px solid #cecece;*/
+    padding:10px;
+    /*box-shadow: 1px 1px 6px darkgray;*/
+    margin-bottom:20px;
+}
+.con-margin
+{
+    margin-top:10px;
+}
+.paginate {
+    margin-left:15px;
+    display:inline-block
+}
+
+.list-group-item.active, 
+.list-group-item.active:focus, 
+.list-group-item.active:hover {
+    background-color:#115173;
+    border-color:#115173;
+}
+.btn-primary,
+.btn-primary:hover
+{
+    background-color:#ffd700;
+    border-color:#ffd700;
+}
+
+.Validation input {
+    color:#fe7a7a
+}

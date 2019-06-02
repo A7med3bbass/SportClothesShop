@@ -1,0 +1,41 @@
+﻿@model FifaShop.Models.CartViewModel
+
+@{
+    Layout = "~/Views/Shared/_MainLayOut.cshtml";
+    ViewBag.title = "CheckOut";
+}
+
+ <h3 class="text-center">Shopping Cart For You</h3>
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>Product Name</td>
+            <td>Prouct Price</td>
+            <td>Quantity</td>
+            <td>Total Price To One Product</td>
+            <td>Remove Product</td>
+        </tr>
+        @foreach (var item in Model.cart.GetAllCart)
+        {
+            <tr>
+                <td>@item.products.pro_name</td>
+                <td>$ @item.products.pro_price</td>
+                <td>@item.Quantitty</td>
+                <td>$ @((item.Quantitty * item.products.pro_price).ToString())</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("pro_id", item.products.pro_id)
+                        @Html.HiddenFor(P => P.returnUrl)
+                        <input class="btn btn-danger" type="submit" value="X" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="container">
+    <h4>SubTotal: <span>$ @Model.cart.TotalValue().ToString()</span></h4>
+    <a class="btn btn-warning" href="@Model.returnUrl">+ Add Product</a>
+    @Html.ActionLink("CheckOut","CheckOut",null, new {@class="btn btn-success" })
+</div>

@@ -1,0 +1,23 @@
+﻿@model FifaShop.Models.ProductModel
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_MainLayOut.cshtml";
+}
+<h2 class="text-center">List Of Product</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">@Html.Action("FilterByCategory", "ProductFilter")</div>
+
+        <div class="col-lg-8">   
+                @foreach (var item in Model.prod){@Html.Partial("~/Views/Shared/PartialProducts.cshtml", item);}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+            <div class="paginate">@Html.PageLink(Model.Paginations, X => Url.Action("List", "Products", new { Pageno = X, prodCat = Model.CurrentCategory }))</div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<string>
+
+
+<ul class='list-group'>
+    <li class='list-group-item'>
+        @Html.ActionLink("All Products", "List", "Products", null, new { @class = "list-group-item " })
+    </li>
+
+    @foreach (var item in Model)
+    {
+        <li class='list-group-item'>
+            @Html.RouteLink(item, new { Controller = "Products", Action = "List", prodCat = item, Pageno = 1 },
+                 new { @class = "list-group-item " + ((item == ViewBag.Activate) ? "active" : "").ToString() })
+        </li>
+    }
+</ul>
+
